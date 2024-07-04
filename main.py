@@ -15,8 +15,8 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 User = {
-    "jmj": {
-        "username": "jmj",
+    "user": {
+        "username": "user",
         "password": "$2b$12$jDODvqMQ4R.yhb4yI7nr7u/FU.BHn3HhRQ3dFxzbOFeQf8wTR81UG",
     }
 }
@@ -36,7 +36,7 @@ async def reset_password(lista: UserList, user = Depends(oauth2_scheme)):       
 
     valid_users = []                                                                              # Armazena usuarios  vlaidos
     invalid_users = []                                                                            # Armazena usuarios não vlaidos
-    url = "https://hml-florianopolis.jmjsistemas.app/crm/public/api/usuario/forgot"               # Endpoint
+    url = "https://hml-link-de-exemplo/forgot"                       # Endpoint
 
     for user in lista.users:
         Try_valid = False
@@ -72,10 +72,3 @@ async def Verify_token(form_data: Annotated[OAuth2PasswordRequestForm, Depends()
             headers={"WWW-Authenticate": "Bearer"},
         )
     return {"access_token": user["username"], "token_type": "bearer"}
-
-'''
-"kaiojmj",
-"natanjmj",
-"vitorjmj",
-"usuarionaovalido"
-'''
