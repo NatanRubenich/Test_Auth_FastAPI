@@ -5,3 +5,4 @@ Aplicação em forma de API que recebe uma lista de usuários e o coloca em "Esq
 
 ### Tecnologias
 * FastAPI
+* Requests
